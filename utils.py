@@ -36,9 +36,9 @@ def compute_mapping_score(i, itr_lim, ix, g1_len, g2_len, m, g2_nodes, seed, g1_
     g1_nbrs2, g1_nbrs2_len, g1_nbrs2_seed = get_seed_nbrs(g1, m, 2, g1_seed)
     g1_nbrs3, g1_nbrs3_len, g1_nbrs3_seed = get_seed_nbrs(g1, m, 3, g1_seed)
     sim = {}
-    for jx, n in enumerate(g2_nodes, 0):
-        if jx % 100 == 0:
-            print(f'-> to g2: {n} [{jx}/{g2_len}]', end='\n')
+    for jx, n in enumerate(g2_nodes, 1):
+        if jx % 500 == 0:
+            print(f'\tto g2: {n} [{jx}/{g2_len}]')
 
         c1, c2, c3 = 0, 0, 0
         m1, m2, m3 = 0, 0, 0
@@ -78,6 +78,6 @@ def compute_mapping_score(i, itr_lim, ix, g1_len, g2_len, m, g2_nodes, seed, g1_
     if len(sim) > 0:
         top = max(sim, key=sim.get)
         strength = sim[top]
-        print(f"### Matched: {m} -> {top}, {strength}")
+        print(f"### Matched: {top}, {strength}")
         return top, strength
     return None, None, None
