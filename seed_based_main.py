@@ -10,7 +10,7 @@ ap.add_argument("-nw", "--num_workers", required=True, type=int, help="Number of
 ap.add_argument("-g1", "--g1_edgelist_file", required=True, type=str, help="Path to g1 edgelist.")
 ap.add_argument("-g2", "--g2_edgelist_file", required=True, type=str, help="Path to g2 edgelist.")
 ap.add_argument("-sm", "--seed_mapping_file", required=True, type=str, help="Path to g1->g2 seed nodes mapping.")
-ap.add_argument("-out", "--output_file", default="mapping_result_3h.txt", type=str, help="Path to output file.")
+ap.add_argument("-out", "--output_file", default="mapping_result.txt", type=str, help="Path to output file.")
 ap.add_argument("-gi", "--map_per_itr", default=500, type=int, help="Number of nodes to map on each global iteration")
 args = vars(ap.parse_args())
 
