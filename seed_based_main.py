@@ -10,7 +10,7 @@ ap.add_argument("-nw", "--num_workers", required=True, type=int, help="Number of
 ap.add_argument("-g1", "--g1_edgelist_file", required=True, type=str, help="Path to g1 edgelist.")
 ap.add_argument("-g2", "--g2_edgelist_file", required=True, type=str, help="Path to g2 edgelist.")
 ap.add_argument("-sm", "--seed_mapping_file", required=True, type=str, help="Path to g1->g2 seed nodes mapping.")
-ap.add_argument("-out", "--output_file", default="mapping_result.txt", type=str, help="Path to output file.")
+ap.add_argument("-out", "--output_file", default="mapping_result_3h.txt", type=str, help="Path to output file.")
 ap.add_argument("-gi", "--map_per_itr", default=500, type=int, help="Number of nodes to map on each global iteration")
 args = vars(ap.parse_args())
 
@@ -32,7 +32,7 @@ if __name__ == "__main__":
         STRENGTH[n] = float('inf')
     ITR_LIM = (g1.number_of_nodes() - len(seed)) // args["map_per_itr"] + 1
 
-    for i in range(1, ITR_LIM + 1):
+    for i in range(1, ITR_LIM + 5):
         g1_nodes = set([k for k in MAPPING if MAPPING[k] is None])
         g1_len = len(g1_nodes)
         g2_nodes = set(g2.nodes) - set(MAPPING.values())
@@ -46,7 +46,7 @@ if __name__ == "__main__":
 
         with mp.Pool(processes=args['num_workers']) as pool:
             for (m, n), s in pool.starmap_async(compute_mapping_score, params).get():
-                if s > _strength[m]:
+                if m is not None and s > _strength[m]:
                     _mapping[m] = n
                     _strength[m] = s
 
@@ -57,6 +57,9 @@ if __name__ == "__main__":
             if s > STRENGTH[m]:
                 MAPPING[m] = _mapping[m]
                 STRENGTH[m] = s
+
+        if None not in list(MAPPING.values()):
+            break
 
     mappings_str = [f'{a} {b}\n' for a, b in list(MAPPING.items())]
     f = open(args["output_file"], 'w')

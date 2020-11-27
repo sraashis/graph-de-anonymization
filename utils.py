@@ -38,7 +38,7 @@ def compute_mapping_score(i, itr_lim, ix, g1_len, g2_len, m, g2_nodes, seed, g1_
     sim = {}
     for jx, n in enumerate(g2_nodes, 1):
         if jx % 500 == 0:
-            print(f'\tto g2: {n} [{jx}/{g2_len}]')
+            print(f'\tg1 {m}[{ix}/{g1_len}] to g2: {n} [{jx}/{g2_len}]')
 
         c1, c2, c3 = 0, 0, 0
         m1, m2, m3 = 0, 0, 0
@@ -57,8 +57,12 @@ def compute_mapping_score(i, itr_lim, ix, g1_len, g2_len, m, g2_nodes, seed, g1_
                 if seed[i] == j:
                     m2 += 1
 
-            c2 = (m1 * m2) / (
-                    math.log(g1_nbrs1_len * g2_nbrs1_len) * math.sqrt(g1_nbrs2_len + 1) * math.sqrt(g2_nbrs2_len))
+            try:
+                c2 = (m1 * m2) / (
+                        math.log(g1_nbrs1_len * g2_nbrs1_len) *
+                        math.sqrt(g1_nbrs2_len) * math.sqrt(g2_nbrs2_len))
+            except:
+                pass
 
         if c2 > 0:
             g2_nbrs3, g2_nbrs3_len, g2_nbrs3_seed = get_seed_nbrs(g2, n, 3, g2_seed)
@@ -66,18 +70,18 @@ def compute_mapping_score(i, itr_lim, ix, g1_len, g2_len, m, g2_nodes, seed, g1_
             for i, j in itertools.product(g1_nbrs3_seed, g2_nbrs3_seed):
                 if seed[i] == j:
                     m3 += 1
-
-            c3 = (m1 * m2 * m3) / (math.log(g1_nbrs1_len * g2_nbrs1_len * g1_nbrs2_len * g2_nbrs2_len + 1) * math.sqrt(
-                g1_nbrs3_len) * math.sqrt(g2_nbrs3_len))
+            try:
+                c3 = (m1 * m2 * m3) / (
+                            math.log(g1_nbrs1_len * g2_nbrs1_len * g1_nbrs2_len * g2_nbrs2_len) *
+                            math.sqrt(g1_nbrs3_len) * math.sqrt(g2_nbrs3_len))
+            except:
+                pass
 
             sim[(m, n)] = round(c1 + c2 + c3, 6)
-            # c = round(c1 + c2 + c3, 6)
-            # c1, c2, c3 = round(c1, 6), round(c2, 6), round(c3, 6)
-            # print('  ->', [m, n], [m1, m2, m3], [c1, c2, c3], c, end='\r')
 
     if len(sim) > 0:
         top = max(sim, key=sim.get)
         strength = sim[top]
         print(f"### Matched: {top}, {strength}")
         return top, strength
-    return None, None, None
+    return (None, None), 0
