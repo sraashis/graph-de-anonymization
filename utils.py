@@ -9,7 +9,10 @@ import networkx as nx
 def load_mapping(file):
     mapping = {}
     for u, v in ([n.strip().split(' ') for n in open(file).readlines()]):
-        mapping[int(u)] = int(v)
+        try:
+            mapping[int(u)] = int(v)
+        except:
+            pass
     return mapping
 
 
@@ -74,8 +77,8 @@ def compute_mapping_score(i, itr_lim, ix, g1_len, g2_len, m, g2_nodes, seed, g1_
                     m3 += 1
             try:
                 c3 = (m1 * m2 * m3) / (
-                            math.log(g1_nbrs1_len * g2_nbrs1_len * g1_nbrs2_len * g2_nbrs2_len) *
-                            math.sqrt(g1_nbrs3_len) * math.sqrt(g2_nbrs3_len))
+                        math.log(g1_nbrs1_len * g2_nbrs1_len * g1_nbrs2_len * g2_nbrs2_len) *
+                        math.sqrt(g1_nbrs3_len) * math.sqrt(g2_nbrs3_len))
             except:
                 pass
 
@@ -88,8 +91,11 @@ def compute_mapping_score(i, itr_lim, ix, g1_len, g2_len, m, g2_nodes, seed, g1_
         return top, strength
     return (None, None), 0
 
+
 EPS = 0.0001
 PR = 4
+
+
 class ConfusionMatrix:
     """
     x-axis is predicted. y-axis is true lable.
@@ -149,6 +155,7 @@ class ConfusionMatrix:
 
     def prfa(self):
         return [self.precision(True), self.recall(True), self.f1(True), self.accuracy()]
+
 
 class Prf1a:
     def __init__(self, eps=EPS, pr=PR):
