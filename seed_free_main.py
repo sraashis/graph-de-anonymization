@@ -12,24 +12,28 @@ def compute_init_seed(i1, N, m, d1, deg2, deg2_len, g1, g2):
     print(f'From g1 {i1}/{N}')
     sim = {}
     for i2, (n, d2) in enumerate(deg2, 1):
-        print(f'\tg1 {i1}/{N} to g2 {n}[{i2}/{deg2_len}]')
-        g1_nbrs2 = utils.knbrs(g1, m, 2)
-        g1_nbrs3 = utils.knbrs(g1, m, 3)
+        try:
+            print(f'\tg1 {i1}/{N} to g2 {n}[{i2}/{deg2_len}]')
+            g1_nbrs2 = utils.knbrs(g1, m, 2)
+            g1_nbrs3 = utils.knbrs(g1, m, 3)
 
-        g1_nbrs2_len = len(g1_nbrs2) - d1
-        g1_nbrs3_len = len(g1_nbrs3) - d1 - g1_nbrs2_len
+            g1_nbrs2_len = len(g1_nbrs2) - d1
+            g1_nbrs3_len = len(g1_nbrs3) - d1 - g1_nbrs2_len
 
-        g2_nbrs2 = utils.knbrs(g2, n, 2)
-        g2_nbrs3 = utils.knbrs(g2, n, 3)
+            g2_nbrs2 = utils.knbrs(g2, n, 2)
+            g2_nbrs3 = utils.knbrs(g2, n, 3)
 
-        g2_nbrs2_len = len(g2_nbrs2) - d2
-        g2_nbrs3_len = len(g2_nbrs3) - d2 - g2_nbrs2_len
+            g2_nbrs2_len = len(g2_nbrs2) - d2
+            g2_nbrs3_len = len(g2_nbrs3) - d2 - g2_nbrs2_len
 
-        r1 = abs((d1 * 2) / (d1 * (d1 - 1)) - (d2 * 2) / (
-                d2 * (d2 - 1)))
-        r2 = abs(g1_nbrs2_len / len(g1_nbrs2) - g2_nbrs2_len / len(g2_nbrs2))
-        r3 = abs(g1_nbrs3_len / len(g1_nbrs3) - g2_nbrs3_len / len(g2_nbrs3))
-        sim[(m, n)] = math.log(3 / (r1 + r2 + r3))
+            r1 = abs((d1 * 2) / (d1 * (d1 - 1)) - (d2 * 2) / (
+                    d2 * (d2 - 1)))
+            r2 = abs(g1_nbrs2_len / len(g1_nbrs2) - g2_nbrs2_len / len(g2_nbrs2))
+            r3 = abs(g1_nbrs3_len / len(g1_nbrs3) - g2_nbrs3_len / len(g2_nbrs3))
+            sim[(m, n)] = math.exp(3 / math.exp(r1 + r2 + r3))
+        except:
+            sim[(m, n)] = 0.0
+
     top = max(sim, key=sim.get)
     return top, sim[top]
 
@@ -68,9 +72,9 @@ if __name__ == "__main__":
     ap.add_argument("-nw", "--num_workers", required=True, type=int, help="Number of workers.")
     ap.add_argument("-g1", "--g1_edgelist_file", required=True, type=str, help="Path to g1 edgelist.")
     ap.add_argument("-g2", "--g2_edgelist_file", required=True, type=str, help="Path to g2 edgelist.")
-    ap.add_argument("-init", "--seed_init_num", default=500, type=int, help="Path to g1->g2 seed nodes mapping.")
+    ap.add_argument("-sin", "--seed_init_num", default=500, type=int, help="Path to g1->g2 seed nodes mapping.")
     ap.add_argument("-out", "--output_file", default="mapping_result.txt", type=str, help="Path to output file.")
-    ap.add_argument("-gi", "--map_per_itr", default=500, type=int,
+    ap.add_argument("-mpi", "--map_per_itr", default=1000, type=int,
                     help="Number of nodes to map on each global iteration")
     args = vars(ap.parse_args())
     seed_free_mapping(args)

@@ -82,7 +82,7 @@ def compute_mapping_with_seed(i, itr_lim, ix, g1_len, g2_len, m, g2_nodes, seed,
             except:
                 pass
 
-            sim[(m, n)] = round(c1 + c2 + c3, 6)
+            sim[(m, n)] = math.log(c1 + c2 + c3 + 1)
 
     if len(sim) > 0:
         top = max(sim, key=sim.get)

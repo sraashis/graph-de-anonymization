@@ -58,10 +58,10 @@ def seed_based_mapping(args):
         if None not in list(MAPPING.values()):
             break
 
-    mappings_str = [f'{a} {b}\n' for a, b in list(MAPPING.items())]
-    with open(args["output_file"], 'w') as f:
-        f.writelines(mappings_str)
-        f.flush()
+        mappings_str = [f'{a} {b}\n' for a, b in list(MAPPING.items())]
+        with open(args["output_file"], 'w') as f:
+            f.writelines(mappings_str)
+            f.flush()
 
 
 if __name__ == "__main__":
@@ -71,7 +71,7 @@ if __name__ == "__main__":
     ap.add_argument("-g2", "--g2_edgelist_file", required=True, type=str, help="Path to g2 edgelist.")
     ap.add_argument("-sm", "--seed_mapping_file", required=True, type=str, help="Path to g1->g2 seed nodes mapping.")
     ap.add_argument("-out", "--output_file", default="mapping_result.txt", type=str, help="Path to output file.")
-    ap.add_argument("-gi", "--map_per_itr", default=500, type=int,
+    ap.add_argument("-mpi", "--map_per_itr", default=500, type=int,
                     help="Number of nodes to map on each global iteration")
     args = vars(ap.parse_args())
     seed_based_mapping(args)
