@@ -35,7 +35,7 @@ def get_seed_nbrs(g, n, k, seed):
     return nbrs, len(nbrs), nbrs.intersection(seed)
 
 
-def compute_mapping_score(i, itr_lim, ix, g1_len, g2_len, m, g2_nodes, seed, g1_seed, g2_seed, g1, g2):
+def compute_mapping_with_seed(i, itr_lim, ix, g1_len, g2_len, m, g2_nodes, seed, g1_seed, g2_seed, g1, g2):
     print(f'ITR[{i}/{itr_lim}]: Matching node from g1 {m}[{ix}/{g1_len}]', end='\n')
     g1_nbrs1, g1_nbrs1_len, g1_nbrs1_seed = get_seed_nbrs(g1, m, 1, g1_seed)
     g1_nbrs2, g1_nbrs2_len, g1_nbrs2_seed = get_seed_nbrs(g1, m, 2, g1_seed)

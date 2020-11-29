@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="bd30995f-21db-48cf-be82-6b07ee284d95" name="sclera">
+        <fileTransfer accessType="SFTP" host="sclera.cs.gsu.edu" port="22" sshConfigId="284947c0-b784-4db2-8382-b0e3c207713b" sshConfig="akhanal1@sclera.cs.gsu.edu:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
