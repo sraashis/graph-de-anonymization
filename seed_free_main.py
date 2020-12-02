@@ -10,28 +10,52 @@ from seed_based_main import seed_based_mapping
 
 def compute_init_seed(i1, N, m, d1, deg2, deg2_len, g1, g2):
     print(f'From g1 {i1}/{N}')
+
+    g1_nbrs1 = utils.knbrs(g1, m, 1)
+    g1_nbrs1_len = len(g1_nbrs1) + 1
+    g1_nbrs1_edge_len = g1.subgraph(g1_nbrs1).number_of_edges()
+
+    g1_nbrs2 = utils.knbrs(g1, m, 2)
+    g1_nbrs2_len = len(g1_nbrs2)
+    g1_nbrs2_only = set(g1_nbrs2) - set(g1_nbrs1)
+    g1_nbrs2_edge_len = g1.subgraph(g1_nbrs2_only).number_of_edges()
+
+    g1_nbrs3 = utils.knbrs(g1, m, 3)
+    g1_nbrs3_len = len(g1_nbrs3)
+    g1_nbrs3_only = set(g1_nbrs3) - set(g1_nbrs2)
+    g1_nbrs3_edge_len = g1.subgraph(g1_nbrs3_only).number_of_edges()
+
     sim = {}
     for i2, (n, d2) in enumerate(deg2, 1):
-        try:
-            print(f'\tg1 {i1}/{N} to g2 {n}[{i2}/{deg2_len}]')
-            g1_nbrs2 = utils.knbrs(g1, m, 2)
-            g1_nbrs3 = utils.knbrs(g1, m, 3)
+        print(f'\tg1 {i1}/{N} to g2 {n}[{i2}/{deg2_len}]')
+        g2_nbrs1 = utils.knbrs(g2, n, 1)
+        g2_nbrs1_len = len(g2_nbrs1)
+        g2_nbrs1_edge_len = g2.subgraph(g2_nbrs1).number_of_edges()
 
-            g1_nbrs2_len = len(g1_nbrs2) - d1
-            g1_nbrs3_len = len(g1_nbrs3) - d1 - g1_nbrs2_len
+        r1_A = (g1_nbrs1_edge_len * g2_nbrs1_edge_len) / (g1_nbrs1_len * g2_nbrs1_len)
+        r1_B = abs(d1 / g1_nbrs1_edge_len - d2 / g2_nbrs1_edge_len)
+        r1 = r1_A * r1_B
 
-            g2_nbrs2 = utils.knbrs(g2, n, 2)
-            g2_nbrs3 = utils.knbrs(g2, n, 3)
+        g2_nbrs2 = utils.knbrs(g2, n, 2)
+        g2_nbrs2_len = len(g2_nbrs2)
+        g2_nbrs2_only = set(g2_nbrs2) - set(g2_nbrs1)
+        g2_nbrs2_edge_len = g2.subgraph(g2_nbrs2_only).number_of_edges()
 
-            g2_nbrs2_len = len(g2_nbrs2) - d2
-            g2_nbrs3_len = len(g2_nbrs3) - d2 - g2_nbrs2_len
+        r2_A = (g1_nbrs2_edge_len * g2_nbrs2_edge_len) / (len(g1_nbrs2_only) * len(g2_nbrs2_only))
+        r2_B = abs(len(g1_nbrs2_only) / g1_nbrs2_len - len(g2_nbrs2_only) / g2_nbrs2_len)
+        r2 = r2_A * r2_B
 
-            r1 = abs((d1 * 2) / (d1 * (d1 - 1)) - (d2 * 2) / (d2 * (d2 - 1)))
-            r2 = abs(g1_nbrs2_len / len(g1_nbrs2) - g2_nbrs2_len / len(g2_nbrs2))
-            r3 = abs(g1_nbrs3_len / len(g1_nbrs3) - g2_nbrs3_len / len(g2_nbrs3))
-            sim[(m, n)] = math.exp(3 / math.exp(r1 + r2 + r3))
-        except:
-            sim[(m, n)] = 0.0
+        g2_nbrs3 = utils.knbrs(g2, n, 3)
+        g2_nbrs3_len = len(g2_nbrs3)
+        g2_nbrs3_only = set(g2_nbrs3) - set(g2_nbrs2)
+        g2_nbrs3_edge_len = g2.subgraph(g2_nbrs3_only).number_of_edges()
+        r3_A = (g1_nbrs3_edge_len * g2_nbrs3_edge_len) / (len(g1_nbrs3_only) * len(g2_nbrs3_only))
+        r3_B = abs(len(g1_nbrs3_only) / g1_nbrs3_len - len(g2_nbrs3_only) / g2_nbrs3_len)
+
+        r3 = r3_A * r3_B
+
+        r = math.exp(3 / math.exp(r1 + r2 + r3)) - 1
+        sim[(m, n)] = r
 
     top = max(sim, key=sim.get)
     return top, sim[top]
