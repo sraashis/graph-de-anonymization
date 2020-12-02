@@ -26,8 +26,7 @@ def compute_init_seed(i1, N, m, d1, deg2, deg2_len, g1, g2):
             g2_nbrs2_len = len(g2_nbrs2) - d2
             g2_nbrs3_len = len(g2_nbrs3) - d2 - g2_nbrs2_len
 
-            r1 = abs((d1 * 2) / (d1 * (d1 - 1)) - (d2 * 2) / (
-                    d2 * (d2 - 1)))
+            r1 = abs((d1 * 2) / (d1 * (d1 - 1)) - (d2 * 2) / (d2 * (d2 - 1)))
             r2 = abs(g1_nbrs2_len / len(g1_nbrs2) - g2_nbrs2_len / len(g2_nbrs2))
             r3 = abs(g1_nbrs3_len / len(g1_nbrs3) - g2_nbrs3_len / len(g2_nbrs3))
             sim[(m, n)] = math.exp(3 / math.exp(r1 + r2 + r3))
