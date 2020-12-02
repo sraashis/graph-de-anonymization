@@ -1,10 +1,13 @@
+import argparse as ap
+import multiprocessing as mp
+
 import networkx as nx
 
 from utils import load_mapping, compute_mapping_with_seed
-import multiprocessing as mp
-import sys
-import argparse as ap
+import tqdm
+import math
 
+DEG_LIM = 10
 
 def seed_based_mapping(args):
     print(f'##### Running with {args["num_workers"]} workers... #####')
@@ -22,6 +25,7 @@ def seed_based_mapping(args):
     ITR_LIM = (g1.number_of_nodes() - len(seed)) // args["map_per_itr"]
     ITR_LIM *= 2
     for i in range(1, ITR_LIM):
+
         g1_seed = set(seed.keys())
         g2_seed = set(seed.values())
 
@@ -31,8 +35,10 @@ def seed_based_mapping(args):
         g2_len = len(g2_nodes)
         _map = {}
         params = []
-        for ix, m in enumerate(g1_nodes):
-            params.append([i, ITR_LIM, ix, g1_len, g2_len, m, g2_nodes, seed, g1_seed, g2_seed, g1, g2])
+        print('Preparing node selection to match...')
+        for ix, m in tqdm.tqdm(enumerate(g1_nodes), total=len(g1_nodes)):
+            valids = [r for r in g2_nodes if abs(g1.degree(m) - g2.degree(r)) <= DEG_LIM * math.sqrt(i)]
+            params.append([i, ITR_LIM, ix, g1_len, len(valids), m, valids, seed, g1_seed, g2_seed, g1, g2])
 
         with mp.Pool(processes=args['num_workers']) as pool:
             for (m, n), s in pool.starmap_async(compute_mapping_with_seed, params).get():
