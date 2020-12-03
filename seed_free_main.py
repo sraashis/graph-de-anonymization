@@ -95,7 +95,7 @@ if __name__ == "__main__":
     ap.add_argument("-nw", "--num_workers", required=True, type=int, help="Number of workers.")
     ap.add_argument("-g1", "--g1_edgelist_file", required=True, type=str, help="Path to g1 edgelist.")
     ap.add_argument("-g2", "--g2_edgelist_file", required=True, type=str, help="Path to g2 edgelist.")
-    ap.add_argument("-sin", "--seed_init_num", default=500, type=int, help="Path to g1->g2 seed nodes mapping.")
+    ap.add_argument("-sin", "--seed_init_num", default=500, type=int, help="Number of seeds mappings to extract.")
     ap.add_argument("-out", "--output_file", default="mapping_result.txt", type=str, help="Path to output file.")
     ap.add_argument("-mpi", "--map_per_itr", default=1000, type=int,
                     help="Number of nodes to map on each global iteration")
