@@ -6,7 +6,6 @@
     
 ### Usage for seed-based
     - python seed_based_main.py -nw 32 -g1 seedbased/G1.edgelist -g2 seedbased/G2.edgelist -sm seedbased/seed_node_pairs.txt -out seedbased/seed_based_result.txt
-    optional arguments:
 
 ```commandline
   -nw NUM_WORKERS, --num_workers Number of workers.
