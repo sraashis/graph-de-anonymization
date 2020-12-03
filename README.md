@@ -8,7 +8,7 @@
     - python seed_based_main.py -nw 32 -g1 seedbased/G1.edgelist -g2 seedbased/G2.edgelist -sm seedbased/seed_node_pairs.txt -out seedbased/seed_based_result.txt
 
 ```commandline
-  -nw NUM_WORKERS, --num_workers Number of workers.
+  -nw NUM_WORKERS, --num_workers Number of workers/processes.
   -g1 G1_EDGELIST_FILE, --g1_edgelist_file, Path to g1 edgelist.
   -g2 G2_EDGELIST_FILE, --g2_edgelist_file, Path to g2 edgelist.
   -sm SEED_MAPPING_FILE, --seed_mapping_file, Path to g1->g2 seed nodes mapping.
@@ -22,8 +22,7 @@
 
  ```commandline
 
-  -nw NUM_WORKERS, --num_workers NUM_WORKERS
-                        Number of workers.
+  -nw NUM_WORKERS, --num_workers, Number of workers/processes.
   -g1 G1_EDGELIST_FILE, --g1_edgelist_file, Path to g1 edgelist.
   -g2 G2_EDGELIST_FILE, --g2_edgelist_file, Path to g2 edgelist.
   -sin SEED_INIT_NUM, --seed_init_num, Number of seed mappings to extract.
