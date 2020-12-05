@@ -35,7 +35,7 @@ def seed_based_mapping(args):
         g2_len = len(g2_nodes)
         _map = {}
         params = []
-        print('Preparing node selection to match...')
+        print('Filtering nodes based on degree bounds...')
         for ix, m in tqdm.tqdm(enumerate(g1_nodes), total=len(g1_nodes)):
             valids = [r for r in g2_nodes if abs(g1.degree(m) - g2.degree(r)) <= DEG_LIM * math.sqrt(i)]
             params.append([i, ITR_LIM, ix, g1_len, len(valids), m, valids, seed, g1_seed, g2_seed, g1, g2])
