@@ -1,3 +1,5 @@
+## Project No. 1: <hr>
+
 ### This is the implementation of graph de-anonymization in two ways:
 - **Seed Based**   
     - It includes iterative seed propagation technique by matching multi-hop neighborhood structure
@@ -6,7 +8,7 @@
     
 ### Usage for seed-based
     - python seed_based_main.py -nw 32 -g1 seedbased/G1.edgelist -g2 seedbased/G2.edgelist -sm seedbased/seed_node_pairs.txt -out seedbased/seed_based_result.txt
-
+### ***Final result is in output folder*** 
 ```commandline
   -nw NUM_WORKERS, --num_workers Number of workers/processes.
   -g1 G1_EDGELIST_FILE, --g1_edgelist_file, Path to g1 edgelist.
@@ -35,3 +37,5 @@
 chmod x+u jobs.sh
 ./jobs.sh
 ```
+
+### Question No 2: <hr>
