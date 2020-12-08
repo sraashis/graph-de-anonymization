@@ -19,16 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d95435a4-2480-44a9-b65e-e47d95e9da0a" name="Default Changelist" comment="Unit test done.">
-      <change afterPath="$PROJECT_DIR$/jobs.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seed_free_main.py" afterDir="false" />
+    <list default="true" id="d95435a4-2480-44a9-b65e-e47d95e9da0a" name="Default Changelist" comment="Readme output added.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seed_based_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/seed_based_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seedfree/unseed_G1.edgelist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seedfree/unseed_G2.edgelist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validation/validation_G1.edgelist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/validation/validation_G2.edgelist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdultDataset.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/AdultDataset.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,11 +57,14 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/papers" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.seed_free_main">
+  <component name="RunManager" selected="Python.seed_based_main">
     <configuration name="seed_based_main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="graph-de-anonymization" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -82,7 +79,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/seed_based_main.py" />
-      <option name="PARAMETERS" value="-nw 1 -g1 seedbased/G1.edgelist -g2 seedbased/G2.edgelist -sm seedbased/seed_node_pairs.txt" />
+      <option name="PARAMETERS" value="-nw 4 -g1 seedbased/G1.edgelist -g2 seedbased/G2.edgelist -sm seedbased/seed_node_pairs.txt" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -104,7 +101,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/seed_free_main.py" />
-      <option name="PARAMETERS" value="-nw 4 -g1 validation/G1.edgelist -g2 validation/G2.edgelist -init 10" />
+      <option name="PARAMETERS" value="-nw 4 -g1 validation/G1.edgelist -g2 validation/G2.edgelist -sin 10" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -131,7 +128,20 @@
       <workItem from="1606523900407" duration="3806000" />
       <workItem from="1606598014779" duration="111000" />
       <workItem from="1606609433105" duration="8925000" />
-      <workItem from="1606618381574" duration="2326000" />
+      <workItem from="1606618381574" duration="5764000" />
+      <workItem from="1606676693017" duration="1753000" />
+      <workItem from="1606693048915" duration="15000" />
+      <workItem from="1606847866797" duration="1135000" />
+      <workItem from="1606865530352" duration="3232000" />
+      <workItem from="1606872455578" duration="9443000" />
+      <workItem from="1606898335901" duration="10934000" />
+      <workItem from="1606959072801" duration="807000" />
+      <workItem from="1607013286013" duration="5357000" />
+      <workItem from="1607124776460" duration="200000" />
+      <workItem from="1607201486918" duration="2634000" />
+      <workItem from="1607290443608" duration="1683000" />
+      <workItem from="1607309697652" duration="15000" />
+      <workItem from="1607449666573" duration="552000" />
     </task>
     <task id="LOCAL-00001" summary="Added">
       <created>1606362658764</created>
@@ -189,7 +199,105 @@
       <option name="project" value="LOCAL" />
       <updated>1606609503442</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Seed free/based">
+      <created>1606620804054</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1606620804054</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Seed free/based">
+      <created>1606623515411</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1606623515411</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Numerically stable.">
+      <created>1606677785736</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1606677785736</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Numerically stable.">
+      <created>1606677910183</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1606677910183</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Node selection.">
+      <created>1606869658494</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1606869658494</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Node selection.">
+      <created>1606890677246</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1606890677246</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Node selection.">
+      <created>1606934081682</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1606934081682</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Readme added.">
+      <created>1607025163191</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1607025163191</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Readme added.">
+      <created>1607025229004</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1607025229004</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Readme added.">
+      <created>1607025315083</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1607025315083</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Debug">
+      <created>1607204112235</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1607204112235</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Final mappings.">
+      <created>1607290486136</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1607290486137</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Readme output added.">
+      <created>1607291137265</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1607291137265</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Readme output added.">
+      <created>1607450019871</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1607450019871</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,98 +322,14 @@
     <MESSAGE value="Adult dataset classifcation done." />
     <MESSAGE value="DPA added." />
     <MESSAGE value="Unit test done." />
-    <option name="LAST_COMMIT_MESSAGE" value="Unit test done." />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="135" y="621" width="800" height="684" key="#Deployment" timestamp="1606432734527">
-      <screen x="0" y="155" width="1080" height="1765" />
-    </state>
-    <state x="135" y="621" width="800" height="684" key="#Deployment/1080.0.1920.1080/0.155.1080.1765@0.155.1080.1765" timestamp="1606432734527" />
-    <state x="114" y="611" width="832" height="711" key="#SSH_Configurations" timestamp="1606432733121">
-      <screen x="0" y="155" width="1080" height="1765" />
-    </state>
-    <state x="114" y="611" width="832" height="711" key="#SSH_Configurations/1080.0.1920.1080/0.155.1080.1765@0.155.1080.1765" timestamp="1606432733121" />
-    <state x="0" y="618" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606619877114">
-      <screen x="0" y="27" width="1080" height="1893" />
-    </state>
-    <state x="0" y="620" key="#com.intellij.execution.impl.EditConfigurationsDialog/1080.0.1920.1080/0.155.1080.1765@0.155.1080.1765" timestamp="1606434846564" />
-    <state x="0" y="618" key="#com.intellij.execution.impl.EditConfigurationsDialog/1080.0.1920.1080/0.27.1080.1893@0.27.1080.1893" timestamp="1606619877114" />
-    <state x="48" y="304" key="#com.intellij.execution.impl.EditConfigurationsDialog/1080.128.1920.1080/48.27.1032.1053@48.27.1032.1053" timestamp="1606510000282" />
-    <state x="312" y="691" width="446" height="545" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog" timestamp="1606429624647">
-      <screen x="0" y="155" width="1080" height="1765" />
-    </state>
-    <state x="312" y="691" width="446" height="545" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/1080.0.1920.1080/0.155.1080.1765@0.155.1080.1765" timestamp="1606429624647" />
-    <state x="1128" y="231" width="1872" height="875" key="DiffContextDialog" timestamp="1606545387560">
-      <screen x="1080" y="128" width="1920" height="1080" />
-    </state>
-    <state x="1128" y="231" width="1872" height="875" key="DiffContextDialog/1080.128.1920.1080/0.155.1080.1765@1080.128.1920.1080" timestamp="1606545387560" />
-    <state x="148" y="127" width="1672" height="853" key="DiffContextDialog/1080.128.1920.1080/48.27.1032.1053@48.27.1032.1053" timestamp="1606511685347" />
-    <state width="1038" height="379" key="GridCell.Tab.0.bottom" timestamp="1606620607381">
-      <screen x="0" y="27" width="1080" height="1893" />
-    </state>
-    <state width="1038" height="729" key="GridCell.Tab.0.bottom/1080.0.1920.1080/0.155.1080.1765@0.155.1080.1765" timestamp="1606490023137" />
-    <state width="1038" height="729" key="GridCell.Tab.0.bottom/1080.0.1920.1080/0.155.1080.1765@1080.0.1920.1080" timestamp="1606490174334" />
-    <state width="1038" height="379" key="GridCell.Tab.0.bottom/1080.0.1920.1080/0.27.1080.1893@0.27.1080.1893" timestamp="1606620607381" />
-    <state width="1830" height="223" key="GridCell.Tab.0.bottom/1080.128.1920.1080/48.27.1032.1053@48.27.1032.1053" timestamp="1606512123099" />
-    <state width="1038" height="379" key="GridCell.Tab.0.center" timestamp="1606620607381">
-      <screen x="0" y="27" width="1080" height="1893" />
-    </state>
-    <state width="1038" height="729" key="GridCell.Tab.0.center/1080.0.1920.1080/0.155.1080.1765@0.155.1080.1765" timestamp="1606490023137" />
-    <state width="1038" height="729" key="GridCell.Tab.0.center/1080.0.1920.1080/0.155.1080.1765@1080.0.1920.1080" timestamp="1606490174334" />
-    <state width="1038" height="379" key="GridCell.Tab.0.center/1080.0.1920.1080/0.27.1080.1893@0.27.1080.1893" timestamp="1606620607381" />
-    <state width="1830" height="223" key="GridCell.Tab.0.center/1080.128.1920.1080/48.27.1032.1053@48.27.1032.1053" timestamp="1606512123099" />
-    <state width="1038" height="379" key="GridCell.Tab.0.left" timestamp="1606620607381">
-      <screen x="0" y="27" width="1080" height="1893" />
-    </state>
-    <state width="1038" height="729" key="GridCell.Tab.0.left/1080.0.1920.1080/0.155.1080.1765@0.155.1080.1765" timestamp="1606490023137" />
-    <state width="1038" height="729" key="GridCell.Tab.0.left/1080.0.1920.1080/0.155.1080.1765@1080.0.1920.1080" timestamp="1606490174334" />
-    <state width="1038" height="379" key="GridCell.Tab.0.left/1080.0.1920.1080/0.27.1080.1893@0.27.1080.1893" timestamp="1606620607381" />
-    <state width="1830" height="223" key="GridCell.Tab.0.left/1080.128.1920.1080/48.27.1032.1053@48.27.1032.1053" timestamp="1606512123098" />
-    <state width="1038" height="379" key="GridCell.Tab.0.right" timestamp="1606620607381">
-      <screen x="0" y="27" width="1080" height="1893" />
-    </state>
-    <state width="1038" height="729" key="GridCell.Tab.0.right/1080.0.1920.1080/0.155.1080.1765@0.155.1080.1765" timestamp="1606490023137" />
-    <state width="1038" height="729" key="GridCell.Tab.0.right/1080.0.1920.1080/0.155.1080.1765@1080.0.1920.1080" timestamp="1606490174334" />
-    <state width="1038" height="379" key="GridCell.Tab.0.right/1080.0.1920.1080/0.27.1080.1893@0.27.1080.1893" timestamp="1606620607381" />
-    <state width="1830" height="223" key="GridCell.Tab.0.right/1080.128.1920.1080/48.27.1032.1053@48.27.1032.1053" timestamp="1606512123099" />
-    <state width="1038" height="689" key="GridCell.Tab.1.bottom" timestamp="1606618359600">
-      <screen x="0" y="27" width="1080" height="1893" />
-    </state>
-    <state width="1038" height="689" key="GridCell.Tab.1.bottom/1080.0.1920.1080/0.27.1080.1893@0.27.1080.1893" timestamp="1606618359600" />
-    <state width="1038" height="689" key="GridCell.Tab.1.center" timestamp="1606618359600">
-      <screen x="0" y="27" width="1080" height="1893" />
-    </state>
-    <state width="1038" height="689" key="GridCell.Tab.1.center/1080.0.1920.1080/0.27.1080.1893@0.27.1080.1893" timestamp="1606618359600" />
-    <state width="1038" height="689" key="GridCell.Tab.1.left" timestamp="1606618359600">
-      <screen x="0" y="27" width="1080" height="1893" />
-    </state>
-    <state width="1038" height="689" key="GridCell.Tab.1.left/1080.0.1920.1080/0.27.1080.1893@0.27.1080.1893" timestamp="1606618359600" />
-    <state width="1038" height="689" key="GridCell.Tab.1.right" timestamp="1606618359600">
-      <screen x="0" y="27" width="1080" height="1893" />
-    </state>
-    <state width="1038" height="689" key="GridCell.Tab.1.right/1080.0.1920.1080/0.27.1080.1893@0.27.1080.1893" timestamp="1606618359600" />
-    <state x="360" y="332" width="417" height="593" key="RollbackChangesDialog" timestamp="1606510737022">
-      <screen x="48" y="27" width="1032" height="1053" />
-    </state>
-    <state x="326" y="667" width="417" height="593" key="RollbackChangesDialog/1080.0.1920.1080/0.155.1080.1765@0.155.1080.1765" timestamp="1606443826676" />
-    <state x="326" y="667" key="RollbackChangesDialog/1080.128.1920.1080/0.155.1080.1765@0.155.1080.1765" timestamp="1606490517705" />
-    <state x="360" y="332" width="417" height="593" key="RollbackChangesDialog/1080.128.1920.1080/48.27.1032.1053@48.27.1032.1053" timestamp="1606510737022" />
-    <state x="135" y="684" width="800" height="559" key="Vcs.Push.Dialog.v2" timestamp="1606609505462">
-      <screen x="0" y="27" width="1080" height="1893" />
-    </state>
-    <state x="135" y="768" width="800" height="559" key="Vcs.Push.Dialog.v2/1080.0.1920.1080/0.155.1080.1765@0.155.1080.1765" timestamp="1606434626846" />
-    <state x="135" y="684" width="800" height="559" key="Vcs.Push.Dialog.v2/1080.0.1920.1080/0.27.1080.1893@0.27.1080.1893" timestamp="1606609505462" />
-    <state x="1320" y="503" width="800" height="559" key="Vcs.Push.Dialog.v2/1080.128.1920.1080/0.155.1080.1765@1080.128.1920.1080" timestamp="1606545399787" />
-    <state x="177" y="393" width="800" height="559" key="Vcs.Push.Dialog.v2/1080.128.1920.1080/48.27.1032.1053@48.27.1032.1053" timestamp="1606511917881" />
-    <state x="100" y="100" width="880" height="1720" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1606441900730">
-      <screen x="0" y="155" width="1080" height="1765" />
-    </state>
-    <state x="100" y="100" width="880" height="1720" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1080.0.1920.1080/0.155.1080.1765@0.155.1080.1765" timestamp="1606441900730" />
-    <state x="1128" y="27" width="914" height="1053" maximized="true" key="dock-window-1" timestamp="1606618589679">
-      <screen x="1080" y="0" width="1920" height="1080" />
-    </state>
-    <state x="1358" y="155" width="1008" height="1053" maximized="true" key="dock-window-1/1080.0.1920.1080/0.155.1080.1765@0.155.1080.1765" timestamp="1606434082197" />
-    <state x="1128" y="27" width="914" height="1053" maximized="true" key="dock-window-1/1080.0.1920.1080/0.27.1080.1893@0.27.1080.1893" timestamp="1606618589679" />
+    <MESSAGE value="Seed free/based" />
+    <MESSAGE value="Numerically stable." />
+    <MESSAGE value="Node selection." />
+    <MESSAGE value="Readme added." />
+    <MESSAGE value="Debug" />
+    <MESSAGE value="Final mappings." />
+    <MESSAGE value="Readme output added." />
+    <option name="LAST_COMMIT_MESSAGE" value="Readme output added." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -317,19 +341,30 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/seed_based_main.py</url>
-          <line>77</line>
+          <line>83</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/seed_based_main.py</url>
+          <line>42</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/seed_free_main.py</url>
-          <line>72</line>
-          <option name="timeStamp" value="3" />
+          <line>102</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/seed_based_main.py</url>
+          <line>81</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/graph_de_anonymization$seed_based_main.coverage" NAME="seed_based_main Coverage Results" MODIFIED="1606615522585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/graph_de_anonymization$seed_free.coverage" NAME="seed_free Coverage Results" MODIFIED="1606619641618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/graph_de_anonymization$seed_free.coverage" NAME="seed_free_main Coverage Results" MODIFIED="1606623369839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/graph_de_anonymization$seed_free_main.coverage" NAME="seed_free_main Coverage Results" MODIFIED="1607024628901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/graph_de_anonymization$seed_based_main.coverage" NAME="seed_based_main Coverage Results" MODIFIED="1607024838382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

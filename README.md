@@ -1,8 +1,12 @@
 All the codes, readme, and results is available in the link [Github Link](https://github.com/sraashis/graph-de-anonymization)
 
+
 ### Install libraries:
  - pip install -U numpy networkx tqdm torch pandas scikit-learn matplotlib
+
+
 ### ***Final results are in the output folder*** 
+
 
 ## Project No. 1: <hr>
 ### This is the implementation of graph de-anonymization in two ways:
