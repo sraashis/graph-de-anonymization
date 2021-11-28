@@ -1,4 +1,4 @@
-Implementation is available in the link [Github Link](https://github.com/sraashis/graph-de-anonymization)
+Implementation is available in the link [Github Link](https://github.com/sraashis/graph-de-anonymization) Report is [here](./Paper.pdf)
 
 
 ### Install libraries:
