@@ -46,5 +46,6 @@ chmod x+u jobs.sh
 ./jobs.sh
 ```
 
-### Project No 2: <hr>
+<!-- ### Project No 2: <hr>
 ### The implementation is in AdultDataset.ipynb python notebook.
+ -->
